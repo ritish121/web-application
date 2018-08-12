@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>Form 2</title>
+</head>
+<body>
+<form action="#"name="Registration" onsubmit="return(validate());">
+<table cellpadding="2" align="center"
+cellspacing="2" border="1">
+<tr>
+<td align="right">Name of account holder:-</td>
+<td><input type="text" name="name"/></td>
+</tr>
+<tr>
+<td align="right">Age:-</td>
+<td><input type="text" name="age"/></td>
+</tr>
+<tr>
+<td align="right">Gender:-</td>
+<td><select name="gender">
+<option value ="-1"selected>[choose yours]</option>
+<option value="1">Male</option>
+<option value="2">Female</option>
+<option value="3">Others</option>
+<select></td>
+</tr>
+<tr>
+<td align="right">Permanent Address:-</td>
+<td><input type="text"name="addr"/></td>
+</tr>
+<tr>
+<td align="right">Phone number:-</td>
+<td><input type="text"name="num"/></td>
+</tr>
+<tr>
+<td align="right">Email-ID:-</td>
+<td><input type="text"name="email"/></td>
+</tr>
+<tr>
+<td align="right">Password:-</td>
+<td><input type="text"name="pass"/></td>
+</tr>
+<tr>
+<td align="right">Re-enter password:-</td>
+<td><input type="text"name="rpass"/></td>
+</tr>
+<tr>
+<td align="center"><input type="submit"onclick="validate(this-myform)"value="submit"/></td>
+<td align="center"><input type="reset" value="cancel"/></td>
+</tr>
+</table>
+</form>
+
+<script language="javascript">
+function validate()
+{ 
+   if( document.Registration.textnames.value == "" )
+   {
+     alert( "Please provide your Name!" );
+     document.Registration.textnames.focus() ;
+     return false;
+   }
+   if( document.Registration.age.value == "" )
+   {
+     alert( "Please provide your age!" );
+     document.Registration.age.focus() ;
+     return false;
+   }
+   if ( (Registration.gender[0].checked == false ) && ( Registration.gender[1].checked == false ) && (Registration.gender[0].checked == false ))
+   {
+   alert ( "Please choose your Gender: Male or Female or other" );
+   return false;
+   }
+   if( document.Registration.permanentaddress.value == "" )
+   {
+     alert( "Please provide your Permanent Address!" );
+     document.Registration.permanentaddress.focus() ;
+     return false;
+   }   
+   
+  if( document.Registration.mobileno.value == "" ||
+           isNaN( document.Registration.mobileno.value) ||
+           document.Registration.mobileno.value.length != 10 )
+   {
+     alert( "Please provide a Mobile No in the format 123." );
+     document.Registration.mobileno.focus() ;
+     return false;
+   }
+   return( true );
+   
+   
+ var email = document.Registration.emailid.value;
+  atpos = email.indexOf("@");
+  dotpos = email.lastIndexOf(".");
+ if (email == "" || atpos < 1 || ( dotpos - atpos < 2 )) 
+ {
+     alert("Please enter correct email ID")
+     document.Registration.emailid.focus() ;
+     return false;
+ }
+  var pass = document.Registration.pass.value;
+	
+ if( document.Registration.pass.value == "" )
+   {
+     alert( "Please provide your Password!" );
+     document.Registration.pass.focus() ;
+     return false;
+   }   
+
+ var rpass = document.Registration.rpass.value;
+	if(rpass ==pass)
+	{
+		alert("successful");
+	}
+	else
+	{
+		alert("re enter your password");
+  	}
+}
+</script>
+</body>
+</html>

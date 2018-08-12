@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Account login</title>
+</head>
+<body>
+<form>
+<h1 align="center"><u>ACCOUNT LOGIN</u></h1>
+<p align="center">Account id:-<input type ="text" name="id"></p>
+<p align="center">Password:-<input type ="password" name="pass"></p>
+<p align="center"><input type="button" onclick="check(this.form)"value="submit"></p>
+<p align="center"><input type="button" onclick="check1(this.form)"value="cancel"></p>
+</form>
+<script language="javascript">
+function check(form)
+{
+	if(form.id.value=="username" && form.pass.value=="userpass")
+	{
+		alert('password is matched');
+		window.open('welcome.html');
+	}
+	else
+	{
+		alert('invalid username and password');
+	}
+}
+function check1(form)
+{
+	window.open('mainmenu.html');
+}
+</script>
+</body>
+</html>

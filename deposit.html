@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Registration Form</title>
+</head>
+<body>
+<form>
+<h1 align="center"><u>form</u></h1>
+<p align="center">FirstName:-<input type ="text" name="fname"></p>
+<p align="center">LastName:-<input type ="text" name="lname"></p>
+<p align="center">MobileNumber:-<input type ="text" name="mobno"></p>
+<p align="center"><input type="submit" onclick ="check(this.form)"value="submit">
+
+</form>
+<script language="javascript">
+function check(form)
+{
+	if(form.fname.value == "")
+	{
+		alert('enter first name');
+	}
+	else if(form.lname.value == "")
+	{
+		alert('enter last name');
+	}
+	else if(form.mobno.value.length != 10)
+	{
+		alert('enter valid number');
+	}
+	else
+	{
+		alert('successful');
+	}
+}
+
+</script>
+</body>
+</html>
